@@ -5,6 +5,6 @@
 
 int main()
 {
-    std::cout << "Let's see if we can get this fucking shit to work. FUCK.\n";
+    std::cout << "OK I think this shit finally works.\n";
 }
 
