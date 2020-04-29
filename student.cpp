@@ -1,4 +1,7 @@
 #include "student.h"
+#include "degree.h"
+#include <iostream>
+#include <string>
 
 //Constructors
 Student::Student() {
@@ -6,55 +9,86 @@ Student::Student() {
 	this->firstName = " ";
 	this->email = " ";
 	this->age = " ";
-	this->daysInCourse = " ";
-	this->degreeProgram = " ";
+	for (int i = 0; i < daysInCourseArraySize; i++) {
+		this->daysInCourse[i] = 0;
+	}
+	this->degreeType = DegreeType::NETWORK;
 }
 
-Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, std::string daysInCourse, std::string degreeProgram)
+Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, double daysInCourse[], DegreeType degreeType)
 {
 	this->studentID = studentID;
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->email = email;
+	for (int i = 0; i < daysInCourseArraySize; i++) {
+		this->daysInCourse[i] = daysInCourse[i];
+	}
+	this->degreeType = degreeType;
 }
 
 //Accessors
 std::string Student::getStudentID()
 {
-	return Student::studentID;
+	return this->Student::studentID;
 }
 std::string Student::getFirstName()
 {
-	return Student::firstName;
+	return this->Student::firstName;
 }
 std::string Student::getLastName() 
 {
-	return Student::lastName;
+	return this->Student::lastName;
 }
 std::string Student::getEmail()
 {
-	return Student::email;
+	return this->Student::email;
 }
-std::string Student::getDaysInCourse()
+double* Student::getDaysInCourse()
 {
-	return Student::daysInCourse;
+	return this->Student::daysInCourse;
 }
-std::string Student::getDegreeProgram()
+DegreeType Student::getDegreeType()
 {
-	return Student::degreeProgram;
+	return this->Student::degreeType;
 }
+
+/* FOR COMPARISON
+double* Book::getPrices() {
+	return this->prices;
+}
+*/
 
 //Mutators
 void Student::setStudentID(std::string studentID) {
 	this->studentID = studentID;
 }
-void setFirstName(std::string firstName) {
-
+void Student::setFirstName(std::string firstName) {
+	this->firstName = firstName;
 }
-void setLastName(std::string lastName) {
-
+void Student::setLastName(std::string lastName) {
+	this->lastName = lastName;
 }
-void setEmail(std::string email) {
-
+void Student::setEmail(std::string email) {
+	this->email = email;
 }
-void setDaysInCourse(std::string daysInCourse) {
-
+void Student::setDaysInCourse(double daysInCourse[]) {
+	for (int i = 0; i < daysInCourseArraySize; i++) {
+		this->daysInCourse[i] = daysInCourse[i];
+	};
+}
+void Student::setDegreeProgram(DegreeType degreeType) {
+	this->degreeType = degreeType;
 }
 
+void Student::print() {
+	std::cout << std::left << std::setw(10) << this->studentID;
+	std::cout << std::left << std::setw(10) << this->firstName;
+	std::cout << std::left << std::setw(10) << this->lastName;
+	std::cout << std::left << std::setw(35) << this->email;
+	for (int i = 0; i < daysInCourseArraySize; i++) {
+		std::cout << std::left << std::setw(10) << this->daysInCourse[i];
+	}
+	std::cout << std::left << std::setw(10) << degreeTypeStrings[static_cast<int>(degreeType)];
+	std::cout << std::endl;
+}

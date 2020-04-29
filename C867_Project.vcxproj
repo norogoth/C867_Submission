@@ -90,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="degree.h" />
-    <ClInclude Include="degreeType.h" />
     <ClInclude Include="roster.h" />
     <ClInclude Include="student.h" />
   </ItemGroup>

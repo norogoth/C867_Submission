@@ -35,8 +35,5 @@
     <ClInclude Include="degree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="degreeType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
