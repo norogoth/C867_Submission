@@ -8,19 +8,20 @@ Student::Student() {
 	this->studentID = " ";
 	this->firstName = " ";
 	this->email = " ";
-	this->age = " ";
+	this->age = 0;
 	for (int i = 0; i < daysInCourseArraySize; i++) {
 		this->daysInCourse[i] = 0;
 	}
 	this->degreeType = DegreeType::NETWORK;
 }
 
-Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, double daysInCourse[], DegreeType degreeType)
+Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, double daysInCourse[], DegreeType degreeType)
 {
 	this->studentID = studentID;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->email = email;
+	this->age = age;
 	for (int i = 0; i < daysInCourseArraySize; i++) {
 		this->daysInCourse[i] = daysInCourse[i];
 	}
@@ -43,6 +44,9 @@ std::string Student::getLastName()
 std::string Student::getEmail()
 {
 	return this->Student::email;
+}
+int Student::getAge() {
+	return this->Student::age;
 }
 double* Student::getDaysInCourse()
 {
@@ -71,6 +75,9 @@ void Student::setLastName(std::string lastName) {
 }
 void Student::setEmail(std::string email) {
 	this->email = email;
+}
+void Student::setAge(int age) {
+	this->age = age;
 }
 void Student::setDaysInCourse(double daysInCourse[]) {
 	for (int i = 0; i < daysInCourseArraySize; i++) {

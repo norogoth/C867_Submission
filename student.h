@@ -16,7 +16,7 @@ protected:
 public:
 //Constructors
 Student();
-Student(std::string studentID, std::string firstName, std::string lastName, std::string email, double daysInCourse[], DegreeType degreeProgram);
+Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, double daysInCourse[], DegreeType degreeProgram);
 
 //accessors
 std::string getStudentID();
@@ -32,7 +32,7 @@ void setStudentID(std::string studentID);
 void setFirstName(std::string firstName);
 void setLastName(std::string lastName);
 void setEmail(std::string email);
-void setAge();
+void setAge(int age);
 void setDaysInCourse(double daysInCourse[]);
 void setDegreeProgram(DegreeType degreeType);
 

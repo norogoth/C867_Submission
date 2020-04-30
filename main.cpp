@@ -20,5 +20,10 @@ int main()
     for (int i = 0; i < 5; i++) {
         roster.parseAndAddToRoster(studentData[i],i);
     }
+    //roster.printAll();
+    roster.add("A6","Hugh","Jass","seymore@butts.com",18,20,20,23, DegreeType::SOFTWARE);
+    roster.printAll();
+    //OK the ABOVE WORKS. Time to break my code
+    roster.remove("A1");
     roster.printAll();
 }
