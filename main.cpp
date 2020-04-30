@@ -4,10 +4,19 @@
 #include <iostream>
 #include "student.h"
 #include "roster.h"
+#include "degree.h"
 
 int main()
 {
-    std::cout << "Test output\n";
+    //Print Out Required Things
+    std::string bar = "===================================";
+    std::cout << "C867 Scripting and Programming Applications" << std::endl;
+    std::cout << bar << std::endl;
+    std::cout << "Language: C++" << std::endl;
+    std::cout << "ID: 001236202" << std::endl;
+    std::cout << "Name: Landon Aaker" << std::endl;
+    std::cout << bar << std::endl;
+
 
     const std::string studentData[] =
     { "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
@@ -20,10 +29,9 @@ int main()
     for (int i = 0; i < 5; i++) {
         roster.parseAndAddToRoster(studentData[i],i);
     }
-    //roster.printAll();
-    roster.add("A6","Hugh","Jass","seymore@butts.com",18,20,20,23, DegreeType::SOFTWARE);
     roster.printAll();
-    //OK the ABOVE WORKS. Time to break my code
-    roster.remove("A1");
+    roster.remove("A3");
     roster.printAll();
+    roster.remove("A3");
+    //roster.~Roster(); destructor called automatically
 }

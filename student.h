@@ -11,12 +11,12 @@ protected:
 	int age;
 	static const int daysInCourseArraySize = 3;
 	double daysInCourse[daysInCourseArraySize];
-	DegreeType degreeType;
+	DegreeProgram degreeType;
 
 public:
 //Constructors
 Student();
-Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, double daysInCourse[], DegreeType degreeProgram);
+Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, double daysInCourse[], DegreeProgram degreeProgram);
 
 //accessors
 std::string getStudentID();
@@ -25,7 +25,7 @@ std::string getLastName();
 std::string getEmail();
 int getAge();
 double* getDaysInCourse();
-DegreeType getDegreeType();
+DegreeProgram getDegreeType();
 
 //Mutators
 void setStudentID(std::string studentID);
@@ -34,7 +34,7 @@ void setLastName(std::string lastName);
 void setEmail(std::string email);
 void setAge(int age);
 void setDaysInCourse(double daysInCourse[]);
-void setDegreeProgram(DegreeType degreeType);
+void setDegreeProgram(DegreeProgram degreeType);
 
 //Methods
 void print();

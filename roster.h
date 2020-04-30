@@ -19,11 +19,15 @@ public:
 	
 	//Methods
 	void parseAndAddToRoster(std::string dataRow, int i);
-	void add(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeType degreeType);
+	void add(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 	void remove(std::string studentID);
 	void printAll();
+	void  printAverageDaysInCourse(std::string studentID);
+	void printInvalidEmails();
+	void printbyDegreeProgram(DegreeProgram degreeProgram);
 
-
+	//destructor
+	~Roster();
 
 
 
